@@ -1,0 +1,432 @@
+/**
+ * CSST102-3A Portfolio - Machine Learning Theme Styles
+ * Shared styles and Tailwind utilities for all pages
+ * Include via: <link rel="stylesheet" href="assets/css/theme.css">
+ */
+
+/* ======================================
+   TAILWIND @APPLY UTILITIES
+   Note: These work with Tailwind CDN + type="text/tailwindcss"
+   For pages linking this CSS directly, use the vanilla CSS equivalents below
+   ====================================== */
+
+/* Text Gradient - ML Theme */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #10b981, #06b6d4, #8b5cf6);
+}
+
+/* ML Gradient - Neural Network Theme */
+.text-gradient-ml {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, #10b981, #06b6d4, #f59e0b);
+}
+
+/* Data Gradient */
+.text-gradient-data {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #06b6d4, #3b82f6, #8b5cf6);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+}
+
+/* Glow Effects - ML Theme */
+.glow-blue {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+}
+
+.glow-ml {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.25),
+    0 0 80px rgba(6, 182, 212, 0.15);
+}
+
+/* Gradient Border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(139, 92, 246, 0.2)
+  );
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.5),
+    rgba(139, 92, 246, 0.5)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Text Balance (modern CSS) */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ======================================
+   ANIMATED BACKGROUNDS
+   ====================================== */
+
+/* Animated Grid Background - ML Theme */
+.animated-grid {
+  background-image: linear-gradient(
+      rgba(16, 185, 129, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 25s linear infinite;
+}
+
+/* Hero Glow Effects - Multiple color variants */
+.hero-glow {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(16, 185, 129, 0.15),
+    transparent
+  );
+}
+
+.hero-glow-violet {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(139, 92, 246, 0.15),
+    transparent
+  );
+}
+
+.hero-glow-cyan {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(6, 182, 212, 0.15),
+    transparent
+  );
+}
+
+.hero-glow-amber {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(245, 158, 11, 0.12),
+    transparent
+  );
+}
+
+.hero-glow-ml {
+  background: radial-gradient(
+      ellipse 60% 40% at 30% -10%,
+      rgba(16, 185, 129, 0.12),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 70% 0%,
+      rgba(6, 182, 212, 0.12),
+      transparent
+    );
+}
+
+/* ======================================
+   GLOBAL STYLES
+   ====================================== */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f1c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* ======================================
+   NAVBAR
+   ====================================== */
+
+.nav-scrolled {
+  background: rgba(10, 15, 28, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ======================================
+   CARD EFFECTS
+   ====================================== */
+
+.activity-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+}
+
+.activity-card:hover .card-icon {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+.info-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.2);
+}
+
+/* Neural Network Node Animation */
+@keyframes pulse-node {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 2s ease-in-out infinite;
+}
+
+/* Data Flow Animation */
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-data-flow {
+  animation: data-flow 3s ease-in-out infinite;
+}
+
+/* ======================================
+   ANIMATIONS
+   ====================================== */
+
+/* Grid Movement */
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float,
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-element:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.float-element:nth-child(3) {
+  animation-delay: -4s;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger Animation Delays */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* ======================================
+   ACCESSIBILITY
+   ====================================== */
+
+/* Focus-visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove outline on mouse focus */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link styling (visible on focus) */
+.sr-only:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: #10b981;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animated-grid,
+  .float-element,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-fade-in-up {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass,
+  .glass-card {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .text-gray-400 {
+    color: #d1d5db;
+  }
+}

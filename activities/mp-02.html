@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Machine Problem 02 - Evaluating Machine Learning Model Performance with Logistic Regression">
+  <meta name="theme-color" content="#030712">
+  <title>MP-02: Model Evaluation | CSST102-3A</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/favicon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body class="font-sans antialiased text-gray-100 bg-[#030712]">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-emerald-500 focus:text-white focus:rounded-lg focus:font-semibold">Skip to main content</a>
+
+  <div class="fixed inset-0 animated-grid pointer-events-none" aria-hidden="true"></div>
+  <div class="fixed inset-0 hero-glow pointer-events-none" aria-hidden="true"></div>
+  <div id="navbar-slot"></div>
+  <main id="main-content" class="pt-28 pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <a href="../activities.html" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-cyan-400 mb-8"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>Back to Activities</a>
+      <div class="mb-10">
+        <span class="inline-block px-4 py-1.5 text-xs font-semibold text-cyan-400 bg-cyan-500/10 rounded-full mb-4">Machine Problem 02</span>
+        <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">Evaluating ML Model Performance</h1>
+        <p class="text-gray-400">Jupyter Notebook • Breast Cancer Dataset • Logistic Regression</p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-6">
+          <div class="glass-card p-8"><h2 class="text-xl font-bold mb-4">Overview</h2><p class="text-gray-400 leading-relaxed">A complete data science workflow implementing <span class="text-white font-medium">Logistic Regression</span> on the Breast Cancer Wisconsin dataset. Demonstrates data preprocessing, model training, and comprehensive evaluation using confusion matrix, learning curves, and cross-validation.</p></div>
+          
+          <div class="glass-card p-8">
+            <h2 class="text-xl font-bold mb-4">Learning Objectives</h2>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Apply data preprocessing and train-test split techniques</li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Implement logistic regression for classification</li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Evaluate with confusion matrix and learning curves</li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Apply 5-fold cross-validation</li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Compare with Decision Tree, KNN, and SVM (Bonus)</li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8">
+            <h2 class="text-xl font-bold mb-4">Key Results</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div class="bg-white/5 rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-emerald-400">~98.7%</div>
+                <div class="text-xs text-gray-500 mt-1">Training Accuracy</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-cyan-400">~97.4%</div>
+                <div class="text-xs text-gray-500 mt-1">Testing Accuracy</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-violet-400">~96.5%</div>
+                <div class="text-xs text-gray-500 mt-1">CV Mean ± 2%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-8"><h2 class="text-xl font-bold mb-4">ML Concepts</h2><div class="flex flex-wrap gap-2"><span class="px-4 py-2 text-sm font-medium text-cyan-400 bg-cyan-500/10 rounded-xl border border-cyan-500/20">Logistic Regression</span><span class="px-4 py-2 text-sm font-medium text-emerald-400 bg-emerald-500/10 rounded-xl border border-emerald-500/20">Confusion Matrix</span><span class="px-4 py-2 text-sm font-medium text-violet-400 bg-violet-500/10 rounded-xl border border-violet-500/20">Cross-Validation</span><span class="px-4 py-2 text-sm font-medium text-amber-400 bg-amber-500/10 rounded-xl border border-amber-500/20">Learning Curves</span></div></div>
+        </div>
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <h2 class="text-lg font-bold mb-4">Files</h2>
+            <div class="space-y-3">
+              <a href="../coursework/machine-problem-02/logistic_regression.ipynb" download class="flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10"><span class="text-sm font-medium text-gray-300">logistic_regression.ipynb</span><span class="text-xs font-medium text-cyan-400">Download</span></a>
+              <a href="../coursework/machine-problem-02/report.pdf" target="_blank" class="flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10"><span class="text-sm font-medium text-gray-300">report.pdf</span><span class="text-xs font-medium text-cyan-400">View</span></a>
+              <a href="../coursework/machine-problem-02/confusion_matrix.png" target="_blank" class="flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10"><span class="text-sm font-medium text-gray-300">confusion_matrix.png</span><span class="text-xs font-medium text-cyan-400">View</span></a>
+              <a href="../coursework/machine-problem-02/learning_curve.png" target="_blank" class="flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10"><span class="text-sm font-medium text-gray-300">learning_curve.png</span><span class="text-xs font-medium text-cyan-400">View</span></a>
+            </div>
+          </div>
+          <div class="glass-card p-6">
+            <h2 class="text-lg font-bold mb-4">Dataset</h2>
+            <p class="text-sm text-gray-400 mb-3"><span class="text-white font-medium">Breast Cancer Wisconsin</span></p>
+            <ul class="text-sm text-gray-400 space-y-1">
+              <li>• 569 samples</li>
+              <li>• 30 numeric features</li>
+              <li>• Binary classification (Malignant/Benign)</li>
+            </ul>
+          </div>
+          <div class="glass-card p-6"><h2 class="text-lg font-bold mb-4">How to Run</h2><div class="bg-[#030712] rounded-xl border border-white/5 p-4"><code class="text-sm font-mono text-cyan-400">jupyter notebook logistic_regression.ipynb</code></div><p class="text-sm text-gray-400 mt-4">Requires: numpy, pandas, matplotlib, seaborn, scikit-learn</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer-slot"></div>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
